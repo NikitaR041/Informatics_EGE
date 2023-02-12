@@ -88,3 +88,21 @@ def F( n ):
     count+=1
 print(F(35))
 print(count)
+
+'''(К. Багдасарян)
+Алгоритм вычисления значения функции F(n), где n – натуральное число, задан
+следующими соотношениями:
+F(n) = 2, если n = 1,
+F(n) = 2 · F(n – 1), если n > 1.
+Чему равно значение выражения F(1900) / 21890?
+'''
+from functools import lru_cache
+@lru_cache(None)
+def f(n):
+    if n == 1:
+        return 2
+    if n > 1:
+        return 2 * f(n - 1)
+for i in range(1901):
+    f(i)
+print(f(1900)/2**1890)
