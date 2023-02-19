@@ -232,5 +232,43 @@ for x in range(1,19):
 Вопрос 3. Сколько существует пар (K; S), при котором одновременно выполняются два условия:
 – у Вани есть выигрышная стратегия, позволяющая ему выиграть первым или вторым ходом при
 любой игре Пети;
-– у Вани нет стратегии, которая позволит ему гарантированно выиграть первым ходом.
+– у Вани нет стратегии, которая позволит ему гарантированно выиграть первым ходом.
 '''
+from functools import lru_cache
+@lru_cache(None)
+def game(x,y):
+    if x + y >= 30:
+        return 0
+    tmp = [game(x+1,y), game(x*2,y), game(x,y+1), game(x,y*2)]
+    neg = []
+    for i in tmp:
+        if i <= 0 :
+            neg.append(i)
+    if len(neg) != 0:
+        return -max(neg) + 1
+    else:
+        return -max(tmp)
+#1
+w = []
+for K in range(1,31):
+    for S in range(1,31):
+        r = game(K,S)
+        if r == -1:
+            w.append((K,S)) 
+print(len(w))
+#2
+w1 = []
+for K in range(1,31):
+    for S in range(1,31):
+        r = game(K,S)
+        if r == 2 and K == 6:
+            w1.append((K,S))
+print(w1)
+#3
+w3 = []
+for K in range(1,31):
+    for S in range(1,31):
+        r = game(K,S)
+        if r == -2:
+            w3.append((K,S))
+print(len(w3))
