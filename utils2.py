@@ -1,14 +1,24 @@
-#----------
-'''Нужно создать файл с особенными функциями'''
-# Проверка на простые числа:
+#Урезанная функция по переводу систем счисления!
+'''
+def numbersystem(number,system):
+    result = ''
+    while number != 0:
+        result = str(number % system) + result
+        number //= system
+    return result
+print(numbersystem(20,2))
+'''
 
-##def is_Prime(x):
-##    i = 2
-##    while i * i <= x:
-##        if x % i == 0:
-##            return False
-##        i+=1
-##    return True
+#Функция,которая проверяет на простые числа:
+'''
+def is_Prime(x):
+    i = 2
+    while i * i <= x:
+        if x % i == 0:
+            return False
+        i+=1
+    return True
+'''
 
 #Пример:
 #16
