@@ -1,3 +1,4 @@
+from turtle import *
 '''
 Определите, сколько точек с целочисленными координатами будут находиться внутри области,
 ограниченной линией, заданной данным алгоритмом.
@@ -154,20 +155,64 @@ print(c)
 Повтори 4 [ Повтори 3 [ Вперед 2 Направо 270] Вперед 5]
 Найдите сумму площадей замкнутых фрагментов фигуры
 '''
-from turtle import *
+##
+##left(90)
+##color('red','blue')
+##m = 50
+##speed(1)
+##
+##begin_fill()
+##for i in range(4):
+##    for j in range(3):
+##        forward(2 * m)
+##        right(270)
+##    forward(5*m)
+##end_fill()
+##
+##mainloop()
 
+#8)
+'''
+Повтори 2 [Вперёд 6 Направо 90 Вперёд 8 Направо 90]
+Поднять хвост
+Вперёд 2 Направо 90 Вперёд 1 Налево 90 
+Опустить хвост
+Повтори 2 [Вперёд 3 Направо 90 Вперёд 4 Направо 90]
+
+Выполняя этот алгоритм, Черепаха рисует одну за другой две фигуры. Определите, сколько точек с
+целочисленными координатами будут находиться внутри первой нарисованной фигуры, но не внутри
+второй. Точки на границах указанной области следует учитывать.
+'''
 left(90)
-color('red','blue')
-m = 50
-speed(1)
+m = 10
+speed(0)
+color('blue','red')
 
 begin_fill()
-for i in range(4):
-    for j in range(3):
-        forward(2 * m)
-        right(270)
-    forward(5*m)
+for i in range(2):
+    forward(6 * m)
+    right(90)
+    forward(8 * m)
+    right(90)
+penup()
+forward(2 * m)
+right(90)
+forward(1 * m)
+left(90)
+pendown()
+for j in range(2):
+    forward(3 * m)
+    right(90)
+    forward(4 * m)
+    right(90)
 end_fill()
 
-mainloop()
+#canvas = getcanvas()
+penup()
+for x in range(-1*m,80*m,m):
+    for y in range(-1*m,30*m,m):
+        goto(x,y)
+        dot(3,'green')
+
+mainloop() 
 

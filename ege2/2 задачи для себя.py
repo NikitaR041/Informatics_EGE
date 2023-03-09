@@ -1,4 +1,5 @@
 #Тренировочные задачи для себя
+from itertools import product
 '''
 number 113
 not a or ( b and not c)
@@ -93,10 +94,19 @@ number 191
 '''
 (not(x) and z) or (not(x) and not(y) and not(z))
 '''
-from itertools import product
-print('w x y z f')
-for w,x,y,z in product([0,1], repeat = 4):
-    f = int((not(x == (not y))) or ((x and w) == z ))
-    if f == False:
-        print(w,x,y,z,f) 
+##from itertools import product
+##print('w x y z f')
+##for w,x,y,z in product([0,1], repeat = 4):
+##    f = int((not(x == (not y))) or ((x and w) == z ))
+##    if f == False:
+##        print(w,x,y,z,f) 
     
+'''
+Ответ: w z y x f - maybe
+((z → y) ∧ (¬ x → w)) → ((z ≡ w) ∨ (y ∧ ¬ x))
+'''
+##print('x y z w f')
+##for x,y,z,w in product([0,1], repeat = 4):
+##    f = int( not((not(z) or y)and(x or w))or ((z == w) or (y and not(x))) )
+##    if f == False:
+##        print(x,y,z,w,f)
