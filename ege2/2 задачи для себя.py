@@ -110,3 +110,13 @@ number 191
 ##    f = int( not((not(z) or y)and(x or w))or ((z == w) or (y and not(x))) )
 ##    if f == False:
 ##        print(x,y,z,w,f)
+
+'''
+Ответ:x z w y - maybe
+w ∧ ((x → y) ≡ (y → z))
+'''
+##print('x y z w f')
+##for x,y,z,w in product([0,1], repeat = 4):
+##    f = int(w and ((not(x) or y) == (not(y) or z)) )
+##    if f == True:
+##        print(x,y,z,w,f)
