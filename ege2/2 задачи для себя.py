@@ -120,3 +120,21 @@ w ∧ ((x → y) ≡ (y → z))
 ##    f = int(w and ((not(x) or y) == (not(y) or z)) )
 ##    if f == True:
 ##        print(x,y,z,w,f)
+
+'''
+(¬x ∧ y ∧ z) ∨ (¬x ∧ ¬z). Ответ:-> yzx
+'''
+##print('x y z f')
+##for x,y,z in product([0,1], repeat = 3 ):
+##    f = int(( not(x) and y and z) or (not(x) and not(z)) )
+##    if f == True:
+##        print(x,y,z,f)
+
+''' zxwy Может быть
+((w → z) ∧ (¬ x → y)) → ((y ≡ w) ∨ (z ∧ ¬ x))
+'''
+print('x y z w f')
+for x,y,z,w in product([0,1], repeat = 4):
+    f = int( not((not(w) or z) and (x or y)) or ((y == w) or (z and not(x))) )
+    if f == False:
+        print(x,y,z,w,f)
