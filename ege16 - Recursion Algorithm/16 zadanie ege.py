@@ -137,3 +137,31 @@ def f(n):
     if n > 1 and n % 2 != 0:
         return f(n - 2) - f(n - 3)+ 2*n
 print(f(40)) # otvet 84
+
+
+""" 
+16) Ответ: 8266912626
+Алгоритм вычисления значнеия функции F(n), где n - натуральное число, задан следующим соотношениями:
+F(n) = 1 при n = 1;
+F(n) = b * F(n-1) если n > 1.
+Чему равно значение выражения F(2023)/F(2020)?
+Можно решать и рисунком, так как это функция рекрусии!
+"""
+#1)
+# from functools import lru_cache
+# @lru_cache(None)
+# def f(n):
+#     if n == 1:
+#         return 1
+#     if n > 1:
+#         return n * f(n-1)
+# for i in range(1,2024):
+#     f(i)
+# print(f(2023)/f(2020))
+#2)
+# import sys
+# sys.setrecursionlimit(10000)
+# def f(x):
+#     if x == 1: return 1
+#     else: return x*f(x-1)
+# print(f(2023)/f(2020))

@@ -133,8 +133,20 @@ w ∧ ((x → y) ≡ (y → z))
 ''' zxwy Может быть
 ((w → z) ∧ (¬ x → y)) → ((y ≡ w) ∨ (z ∧ ¬ x))
 '''
-print('x y z w f')
-for x,y,z,w in product([0,1], repeat = 4):
-    f = int( not((not(w) or z) and (x or y)) or ((y == w) or (z and not(x))) )
-    if f == False:
-        print(x,y,z,w,f)
+# print('x y z w f')
+# for x,y,z,w in product([0,1], repeat = 4):
+#     f = int( not((not(w) or z) and (x or y)) or ((y == w) or (z and not(x))) )
+#     if f == False:
+#         print(x,y,z,w,f)
+
+'''Ответ: zxyw
+((x → z) → y) ∨ ¬w это получается int((not(not(x) or z ) or ) or not(w)), либо (x and not(z)) or y) or not(w)
+'''
+# from itertools import product
+# print('x y z w f')
+# for x,y,z,w in product([0,1], repeat = 4):
+#     f = int(((x and not(z)) or y) or not(w))
+#     if f == False:
+#         print(x,y,z,w,f)
+
+print(2**7)
